@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://biofermer-leshnikov-razsad.wintrylemon64.chatgpt.site/sitemap.xml

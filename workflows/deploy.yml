@@ -1,0 +1,40 @@
+name: Publish website
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Download all website files
+        uses: actions/checkout@v6
+      - name: Read the actual Pages URL
+        id: pages
+        uses: actions/configure-pages@v5
+      - name: Build and validate website addresses
+        env:
+          PAGES_BASE_URL: ${{ steps.pages.outputs.base_url }}
+        run: python3 tools/build.py --url "$PAGES_BASE_URL" --output publish
+      - name: Check JavaScript
+        run: |
+          for file in ./*.js; do
+            node --check "$file"
+          done
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: publish
+      - name: Publish
+        id: deployment
+        uses: actions/deploy-pages@v4
