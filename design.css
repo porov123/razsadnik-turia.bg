@@ -51,3 +51,15 @@ header>*{min-width:0}.brand>span:last-child{overflow-wrap:anywhere}
 @media(max-width:800px){header nav{flex:1 1 100%;justify-content:center;gap:24px;order:2}header .language-picker{order:3;flex:1 1 100%;justify-content:center}.language-flag{width:40px;min-height:44px}.hero-copy,.section-heading{min-width:0}.product.is-active .product-copy{max-height:none}.gallery-lightbox{padding-top:65px}footer{align-items:flex-start;flex-direction:column}.contact-details span{float:none;display:inline-block}}
 @media(max-width:390px){.hero h1{font-size:clamp(39px,12vw,50px)}.gallery-caption{align-items:flex-start;gap:8px}.gallery-controls{gap:3px}.gallery-controls button{width:44px}.variety-list .variety-name{font-size:22px}.contacts h2{font-size:32px}.navigation-dialog{padding:28px 20px}.navigation-dialog h2{font-size:23px}}
 @media(max-width:800px){html{scroll-padding-top:205px}.detail-breadcrumbs,.plant-selection,.variety-order{scroll-margin-top:205px}}
+.project-announcement{max-width:1320px;margin:0 auto;padding:48px 5% 0}
+.project-announcement-card{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);align-items:center;gap:40px;padding:32px;background:#f0f2e9;border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:16px}
+.project-announcement-copy .eyebrow{color:#8a7445;margin-bottom:16px}
+.project-announcement-copy h2{font-size:clamp(27px,3vw,40px);line-height:1.16;letter-spacing:-1px}
+.project-announcement-copy>p:not(.eyebrow){max-width:440px;color:var(--muted);font-size:14px;line-height:1.8}
+.project-document-link{display:inline-flex;align-items:center;gap:9px;margin-top:8px;padding-bottom:4px;border-bottom:1px solid var(--gold);font-size:13px;font-weight:600}
+.project-document-link:hover{color:#718568}
+.project-document-preview{display:block;min-width:0;padding:12px;border:1px solid #dce3d9;border-radius:12px;background:#fff}
+.project-document-preview img{display:block;width:100%;height:auto;max-height:360px;object-fit:contain}
+.project-document-preview:focus-visible{outline-offset:4px}
+@media(max-width:800px){.project-announcement{padding:32px 7% 0}.project-announcement-card{grid-template-columns:1fr;gap:24px;padding:24px}.project-announcement-copy h2{font-size:clamp(27px,7vw,36px)}.project-document-preview img{max-height:300px}}
+@media(max-width:390px){.project-announcement{padding-inline:5%}.project-announcement-card{padding:18px}}
